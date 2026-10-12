@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ff3e8a">
+  <title>Bruna 23 anos | Você está convidado(a)!</title>
+  <meta name="description" content="Você está convidado(a) para o aniversário de 23 anos da Bruna! Toque para abrir.">
+  <!-- Prévia no WhatsApp: depois de subir, troque "capa.jpg" pelo link completo (ex: https://seusite.com/capa.jpg) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bruna 23 anos 🎁 Você está convidado(a)!">
+  <meta property="og:description" content="Abra o presente e confirme sua presença!">
+  <meta property="og:image" content="capa.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== ABERTURA: CAIXA DE PRESENTE ===== -->
+  <div id="abertura" class="abertura">
+    <div class="formas" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <p class="ab-titulo">Tem um presente<br>pra você!</p>
+    <button class="presente" id="presente" aria-label="Abrir o presente">
+      <span class="tampa"><span class="laco"><i></i><i></i></span></span>
+      <span class="caixa"><span class="fita"></span></span>
+    </button>
+    <p class="ab-dica">Toque <b id="faltam">3</b>x para abrir 🎁</p>
+  </div>
+
+  <main class="convite">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="formas" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <p class="hero-pre">🎉 Bora comemorar os</p>
+      <h1 class="nome-pop" id="nomePop" aria-label="Bruna">Bruna</h1>
+      <div class="selo-idade"><span><b data-c="idade">23</b>anos!</span></div>
+      <p class="hero-sub">e você não pode faltar!</p>
+    </section>
+
+    <div class="faixa" aria-hidden="true">
+      <div>
+        <span>NIVER DA <b data-c="primeiroNome"></b> ★ <b data-c="idade"></b> ANOS ★ VAI SER ÉPICO ★ </span>
+        <span>NIVER DA <b data-c="primeiroNome"></b> ★ <b data-c="idade"></b> ANOS ★ VAI SER ÉPICO ★ </span>
+        <span>NIVER DA <b data-c="primeiroNome"></b> ★ <b data-c="idade"></b> ANOS ★ VAI SER ÉPICO ★ </span>
+        <span>NIVER DA <b data-c="primeiroNome"></b> ★ <b data-c="idade"></b> ANOS ★ VAI SER ÉPICO ★ </span>
+      </div>
+    </div>
+
+    <!-- RASPADINHA -->
+    <section class="bloco">
+      <h2 class="titulo reveal">Raspe e <mark>descubra</mark> a data!</h2>
+      <div class="raspa reveal">
+        <div class="raspa-premio">
+          <small data-c="semana"></small>
+          <b><span data-c="dia"></span>/<span data-c="mesNum"></span></b>
+          <span><span data-c="mes"></span> · <span data-c="hora"></span></span>
+        </div>
+        <canvas id="raspadinha" data-sem-brilho aria-label="Raspe com o dedo para ver a data"></canvas>
+      </div>
+      <p class="dica">☝️ passe o dedo na área prateada</p>
+    </section>
+
+    <!-- MENSAGEM -->
+    <section class="bloco">
+      <div class="balao-fala reveal">
+        <p data-c="mensagem"></p>
+        <span class="quem">— <span data-c="primeiroNome"></span> 💖</span>
+      </div>
+    </section>
+
+    <!-- CONTAGEM -->
+    <section class="bloco">
+      <h2 class="titulo reveal">Falta <mark>pouco!</mark></h2>
+      <div class="contagem reveal" data-cd-box>
+        <div><b data-cd="d">00</b><small>dias</small></div>
+        <div><b data-cd="h">00</b><small>horas</small></div>
+        <div><b data-cd="m">00</b><small>min</small></div>
+        <div><b data-cd="s">00</b><small>seg</small></div>
+      </div>
+      <p class="chegou-txt" data-cd-fim hidden>É HOJE, GENTE!!! 🥳</p>
+    </section>
+
+    <!-- DETALHES -->
+    <section class="bloco">
+      <div class="infos">
+        <article class="info reveal"><span>📅</span><small>Quando</small><b><span data-c="semana"></span>, <span data-c="dataCompleta"></span></b><p>às <span data-c="hora"></span></p></article>
+        <article class="info reveal"><span>📍</span><small>Onde</small><b data-c="localNome"></b><p data-c="localEndereco"></p></article>
+        <article class="info reveal" data-se="traje"><span>👟</span><small>Traje</small><b data-c="traje"></b><p>vem lindo(a)!</p></article>
+      </div>
+    </section>
+
+    <!-- MAPA -->
+    <section class="bloco">
+      <h2 class="titulo reveal">Como <mark>chegar</mark></h2>
+      <div class="mapa reveal" data-mapa></div>
+      <div class="botoes reveal">
+        <a class="btn azul" data-maps>📍 Google Maps</a>
+        <a class="btn verde" data-waze>🚗 Waze</a>
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section class="bloco" data-se="fotos">
+      <h2 class="titulo reveal">Álbum da <mark>aniversariante</mark></h2>
+      <div class="galeria reveal" data-galeria></div>
+    </section>
+
+    <!-- PRESENTES -->
+    <section class="bloco" data-se="presentes">
+      <div class="cartao reveal">
+        <h2 class="titulo pequeno">🎁 Presente</h2>
+        <p data-c="presentes"></p>
+        <div data-se="pix">
+          <code class="pix" data-c="pix"></code>
+          <button class="btn rosa" data-copiar-pix>Copiar chave Pix</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="bloco" id="confirmar">
+      <h2 class="titulo reveal">Vai <mark>colar?</mark></h2>
+      <form class="cartao form reveal" data-rsvp>
+        <label class="campo"><span>Seu nome</span><input name="nome" autocomplete="name" placeholder="Escreve aqui" required></label>
+        <div class="escolha">
+          <label><input type="radio" name="vai" value="sim" checked><span>🥳 Bora!</span></label>
+          <label><input type="radio" name="vai" value="nao"><span>😭 Não dá</span></label>
+        </div>
+        <label class="campo" data-linha-acomp><span>Quantas pessoas?</span><select name="acomp"></select></label>
+        <label class="campo"><span>Recadinho (opcional)</span><textarea name="recado" rows="2" placeholder="Manda um parabéns!"></textarea></label>
+        <button class="btn rosa grande" type="submit">Confirmar no WhatsApp</button>
+      </form>
+    </section>
+
+    <!-- AGENDA -->
+    <section class="bloco">
+      <div class="botoes reveal">
+        <a class="btn amarelo" data-agenda="google">📆 Google Agenda</a>
+        <button class="btn laranja" data-agenda="ics">⏰ Agenda do celular</button>
+        <button class="btn azul" data-share>📤 Compartilhar</button>
+      </div>
+    </section>
+
+    <footer class="rodape">
+      <p class="tchau">Te vejo lá! ✌️</p>
+      <small>Convite digital por <b>Sales Soluções</b> · @salaessol</small>
+    </footer>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+  <script>
+    (function () {
+      const C = window.CONVITE;
+
+      /* letras coloridas do nome */
+      const nome = document.getElementById('nomePop');
+      nome.innerHTML = [...C.primeiroNome].map((l, i) => `<span style="--i:${i}" aria-hidden="true">${l}</span>`).join('');
+
+      /* presente: 3 toques */
+      const btn = document.getElementById('presente');
+      const faltam = document.getElementById('faltam');
+      let n = 3;
+      btn.addEventListener('click', () => {
+        if (n <= 0) return;
+        n--;
+        faltam.textContent = n;
+        btn.classList.remove('treme'); void btn.offsetWidth; btn.classList.add('treme');
+        const r = btn.getBoundingClientRect();
+        festa.brilhos({ x: r.left + r.width / 2, y: r.top + 20, qtd: 12 });
+        if (n === 0) {
+          btn.classList.add('abre');
+          setTimeout(() => festa.explodir(r.left + r.width / 2, r.top + 30, { qtd: 220, forca: 16 }), 250);
+          setTimeout(() => { abrirConvite(); festa.baloes({ qtd: 12 }); }, 1400);
+        }
+      });
+
+      /* raspadinha */
+      const cv = document.getElementById('raspadinha');
+      const ctx = cv.getContext('2d');
+      let pronto = false, raspando = false, contador = 0;
+      function pinta() {
+        const r = cv.getBoundingClientRect();
+        if (!r.width) return;
+        const dpr = Math.min(devicePixelRatio || 1, 2);
+        cv.width = r.width * dpr; cv.height = r.height * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        const g = ctx.createLinearGradient(0, 0, r.width, r.height);
+        g.addColorStop(0, '#c9ccd6'); g.addColorStop(.45, '#f4f5f8'); g.addColorStop(.55, '#b7bbc7'); g.addColorStop(1, '#e3e5eb');
+        ctx.fillStyle = g; ctx.fillRect(0, 0, r.width, r.height);
+        ctx.fillStyle = '#ffffff55';
+        for (let i = 0; i < 160; i++) ctx.fillRect(Math.random() * r.width, Math.random() * r.height, 2, 2);
+        ctx.fillStyle = '#6b6f80'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        ctx.font = "800 26px 'Bricolage Grotesque', sans-serif";
+        ctx.fillText('RASPE AQUI ✨', r.width / 2, r.height / 2 - 8);
+        ctx.font = "600 13px 'Bricolage Grotesque', sans-serif";
+        ctx.fillText('a data da festa está escondida', r.width / 2, r.height / 2 + 20);
+        ctx.globalCompositeOperation = 'destination-out';
+        pronto = true;
+      }
+      function raspa(e) {
+        if (!pronto || !raspando) return;
+        const r = cv.getBoundingClientRect();
+        ctx.beginPath();
+        ctx.arc(e.clientX - r.left, e.clientY - r.top, 24, 0, Math.PI * 2);
+        ctx.fill();
+        if (++contador % 8 === 0) confere();
+      }
+      function confere() {
+        const d = ctx.getImageData(0, 0, cv.width, cv.height).data;
+        let limpo = 0, total = 0;
+        for (let i = 3; i < d.length; i += 64) { total++; if (d[i] === 0) limpo++; }
+        if (limpo / total > 0.5) revela();
+      }
+      function revela() {
+        if (cv.classList.contains('feito')) return;
+        cv.classList.add('feito');
+        const r = cv.getBoundingClientRect();
+        festa.explodir(r.left + r.width / 2, r.top + r.height / 2, { qtd: 160 });
+      }
+      cv.addEventListener('pointerdown', (e) => { raspando = true; cv.setPointerCapture(e.pointerId); raspa(e); });
+      cv.addEventListener('pointermove', raspa);
+      ['pointerup', 'pointercancel'].forEach((t) => cv.addEventListener(t, () => { raspando = false; confere(); }));
+      (document.fonts ? document.fonts.ready : Promise.resolve()).then(pinta);
+      let larg = 0;
+      addEventListener('resize', () => {
+        const w = cv.getBoundingClientRect().width;
+        if (w === larg || cv.classList.contains('feito')) return;
+        larg = w; ctx.globalCompositeOperation = 'source-over'; pinta();
+      });
+    })();
+  </script>
+</body>
+</html>

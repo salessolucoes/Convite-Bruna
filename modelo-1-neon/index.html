@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#07020f">
+  <title>Bruna 23 anos | Você está convidado(a)!</title>
+  <meta name="description" content="Você está convidado(a) para o aniversário de 23 anos da Bruna! Toque para abrir.">
+  <!-- Prévia no WhatsApp: depois de subir, troque "capa.jpg" pelo link completo (ex: https://seusite.com/capa.jpg) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bruna 23 anos 🎉 Você está convidado(a)!">
+  <meta property="og:description" content="Toque para abrir o convite e confirmar sua presença.">
+  <meta property="og:image" content="capa.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Neonderthaw&family=Sora:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== ABERTURA: INGRESSO VIP ===== -->
+  <div id="abertura" class="abertura">
+    <div class="abertura-luzes" aria-hidden="true"></div>
+    <button class="ingresso" id="ingresso" aria-label="Rasgar o ingresso e abrir o convite">
+      <span class="ing-corpo">
+        <span class="ing-topo">ADMIT ONE • VIP</span>
+        <span class="ing-nome" data-c="primeiroNome">Bruna</span>
+        <span class="ing-idade"><b data-c="idade">23</b> anos</span>
+        <span class="ing-data"><span data-c="dataCurta"></span> · <span data-c="hora"></span></span>
+      </span>
+      <span class="ing-canhoto">
+        <span>Nº 0023</span>
+        <span class="ing-codigo" aria-hidden="true"></span>
+      </span>
+    </button>
+    <p class="abertura-dica">Toque para <b>rasgar o ingresso</b></p>
+  </div>
+
+  <main class="convite">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="lasers" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="grade" aria-hidden="true"></div>
+      <div class="hero-txt">
+        <p class="hero-pre">Você está na lista VIP da</p>
+        <h1 class="neon-nome" data-c="primeiroNome">Bruna</h1>
+        <div class="neon-idade" data-c="idade">23</div>
+        <p class="hero-data">
+          <span data-c="dia"></span><i>✦</i><span data-c="mesCurto"></span><i>✦</i><span data-c="hora"></span>
+        </p>
+      </div>
+      <a href="#mensagem" class="rolar" aria-label="Ver mais">⌄</a>
+    </section>
+
+    <div class="faixa" aria-hidden="true">
+      <div>
+        <span>VEM CURTIR ✦ <b data-c="primeiroNome"></b> <b data-c="idade"></b> ✦ NOITE ÉPICA ✦ </span>
+        <span>VEM CURTIR ✦ <b data-c="primeiroNome"></b> <b data-c="idade"></b> ✦ NOITE ÉPICA ✦ </span>
+        <span>VEM CURTIR ✦ <b data-c="primeiroNome"></b> <b data-c="idade"></b> ✦ NOITE ÉPICA ✦ </span>
+        <span>VEM CURTIR ✦ <b data-c="primeiroNome"></b> <b data-c="idade"></b> ✦ NOITE ÉPICA ✦ </span>
+      </div>
+    </div>
+
+    <!-- MENSAGEM -->
+    <section id="mensagem" class="bloco">
+      <div class="vidro reveal">
+        <p class="rotulo">// recado da aniversariante</p>
+        <p class="mensagem" data-c="mensagem"></p>
+        <p class="assina">— <span data-c="primeiroNome"></span> 💜</p>
+      </div>
+    </section>
+
+    <!-- CONTAGEM -->
+    <section class="bloco">
+      <h2 class="titulo reveal">Contagem <span>regressiva</span></h2>
+      <div class="contagem reveal" data-cd-box>
+        <div><b data-cd="d">00</b><small>dias</small></div>
+        <div><b data-cd="h">00</b><small>horas</small></div>
+        <div><b data-cd="m">00</b><small>min</small></div>
+        <div><b data-cd="s">00</b><small>seg</small></div>
+      </div>
+      <p class="chegou-txt" data-cd-fim hidden>É HOJE!!! 🎉</p>
+    </section>
+
+    <!-- DETALHES -->
+    <section class="bloco">
+      <h2 class="titulo reveal">Line-<span>up</span></h2>
+      <div class="cards">
+        <article class="card reveal">
+          <span class="ico">📅</span>
+          <div><small>Quando</small><b><span data-c="semana"></span>, <span data-c="dataCompleta"></span></b><p>a partir das <span data-c="hora"></span></p></div>
+        </article>
+        <article class="card reveal">
+          <span class="ico">📍</span>
+          <div><small>Onde</small><b data-c="localNome"></b><p data-c="localEndereco"></p></div>
+        </article>
+        <article class="card reveal" data-se="traje">
+          <span class="ico">👗</span>
+          <div><small>Dress code</small><b data-c="traje"></b><p>capricha no look ✨</p></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- MAPA -->
+    <section class="bloco">
+      <h2 class="titulo reveal">Como <span>chegar</span></h2>
+      <div class="mapa reveal" data-mapa></div>
+      <div class="botoes reveal">
+        <a class="btn" data-maps>Google Maps</a>
+        <a class="btn" data-waze>Waze</a>
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section class="bloco" data-se="fotos">
+      <h2 class="titulo reveal">Meus <span>momentos</span></h2>
+      <div class="galeria reveal" data-galeria></div>
+      <p class="dica-arrasta">← arraste para o lado →</p>
+    </section>
+
+    <!-- PRESENTES -->
+    <section class="bloco" data-se="presentes">
+      <div class="vidro centro reveal">
+        <p class="rotulo">// presente</p>
+        <p class="mensagem" data-c="presentes"></p>
+        <div data-se="pix">
+          <code class="pix" data-c="pix"></code>
+          <button class="btn btn-cheio" data-copiar-pix>Copiar chave Pix</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="bloco" id="confirmar">
+      <h2 class="titulo reveal">Confirma <span>aí!</span></h2>
+      <form class="vidro form reveal" data-rsvp>
+        <label class="campo">
+          <span>Seu nome</span>
+          <input name="nome" autocomplete="name" placeholder="Como você se chama?" required>
+        </label>
+        <div class="escolha">
+          <label><input type="radio" name="vai" value="sim" checked><span>🔥 Tô dentro!</span></label>
+          <label><input type="radio" name="vai" value="nao"><span>😢 Não vou</span></label>
+        </div>
+        <label class="campo" data-linha-acomp>
+          <span>Quantas pessoas?</span>
+          <select name="acomp"></select>
+        </label>
+        <label class="campo">
+          <span>Recado (opcional)</span>
+          <textarea name="recado" rows="2" placeholder="Deixa um recado pra aniversariante"></textarea>
+        </label>
+        <button class="btn btn-cheio grande" type="submit">Confirmar pelo WhatsApp</button>
+      </form>
+    </section>
+
+    <!-- AGENDA -->
+    <section class="bloco">
+      <div class="botoes reveal">
+        <a class="btn" data-agenda="google">+ Google Agenda</a>
+        <button class="btn" data-agenda="ics">+ Agenda do celular</button>
+        <button class="btn" data-share>Compartilhar convite</button>
+      </div>
+    </section>
+
+    <footer class="rodape">
+      <p class="neon-mini" data-c="primeiroNome"></p>
+      <p>te espero lá! 💜</p>
+      <small>Convite digital por <b>Sales Soluções</b> · @salaessol</small>
+    </footer>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+  <script>
+    (function () {
+      const ing = document.getElementById('ingresso');
+      let foi = false;
+      ing.addEventListener('click', () => {
+        if (foi) return; foi = true;
+        ing.classList.add('rasgando');
+        const r = ing.getBoundingClientRect();
+        festa.brilhos({ x: r.right - 40, y: r.top + r.height / 2, qtd: 30 });
+        setTimeout(() => {
+          abrirConvite();
+          festa.canhoes();
+          setTimeout(() => festa.chuva({ duracao: 1800, densidade: 2 }), 600);
+        }, 900);
+      });
+    })();
+  </script>
+</body>
+</html>

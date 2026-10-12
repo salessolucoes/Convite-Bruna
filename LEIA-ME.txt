@@ -1,0 +1,32 @@
+PACOTE DE CONVITES – BRUNA 23 ANOS
+Sales Soluções
+=====================================
+
+COMO SUBIR
+- Suba a pasta inteira de uma vez (Netlify, Vercel, GitHub Pages...).
+- O link principal (index.html da raiz) é a VITRINE: mostra os 4 modelos para a cliente escolher.
+
+DEPOIS QUE ELA ESCOLHER
+1. Apague as pastas dos outros modelos e o index.html da raiz (vitrine).
+2. Tire os arquivos de dentro da pasta do modelo escolhido e coloque na raiz
+   (assim o link fica direto no convite, sem /modelo-x/).
+
+PARA EDITAR (só no config.js do modelo escolhido)
+- data .......... data e hora da festa (manter o -03:00 no final)
+- whatsapp ...... 55 + DDD + número, só números (ex: 5517999998888)
+- traje / presentes / pix ... deixe '' (vazio) para esconder a seção
+- fotos ......... coloque as fotos na pasta "fotos" e liste:
+                  fotos: ['fotos/foto1.jpg', 'fotos/foto2.jpg', 'fotos/foto3.jpg']
+                  (a primeira foto vira a foto de capa nos modelos 2 e 4)
+- demonstracao .. coloque false na entrega final
+
+PRÉVIA NO WHATSAPP (foto quando manda o link)
+- Coloque uma imagem "capa.jpg" (1200x630) na pasta do convite.
+- No index.html troque content="capa.jpg" pelo link completo,
+  ex: content="https://seusite.com/capa.jpg"
+
+PENDENTE COM A CLIENTE
+[ ] Confirmar data e horário (está 07/04/2027 às 19h)
+[ ] WhatsApp para confirmação
+[ ] Fotos
+[ ] Traje e chave Pix (ou apagar)
