@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#2a0716">
+  <title>Bruna 23 anos | Você está convidado(a)!</title>
+  <meta name="description" content="Você está convidado(a) para o aniversário de 23 anos da Bruna! Toque para abrir.">
+  <!-- Prévia no WhatsApp: depois de subir, troque "capa.jpg" pelo link completo (ex: https://seusite.com/capa.jpg) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bruna 23 anos 💎 Um tesouro de convite pra você!">
+  <meta property="og:description" content="Toque para abrir o convite e confirmar sua presença.">
+  <meta property="og:image" content="capa.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Italianno&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="icone" viewBox="0 0 64 48"><path d="M4 14l12 10 8-18 8 14 8-14 8 18 12-10-6 24H10z" fill="currentColor"/><rect x="10" y="38" width="44" height="6" rx="2" fill="currentColor"/><circle cx="4" cy="12" r="3.4" fill="currentColor"/><circle cx="24" cy="5" r="3.4" fill="currentColor"/><circle cx="40" cy="5" r="3.4" fill="currentColor"/><circle cx="60" cy="12" r="3.4" fill="currentColor"/><path d="M32 22l4 5-4 5-4-5z" fill="#f7c3d6"/></symbol>
+  </svg>
+
+  <!-- ===== ABERTURA ===== -->
+  <div id="abertura" class="abertura">
+    <div class="veludo" aria-hidden="true"></div>
+    <div class="ab-conteudo">
+      <p class="ab-pre surge" style="animation-delay:.3s">Um tesouro guardado para você</p>
+      <p class="ab-nome surge" style="animation-delay:.9s" data-c="primeiroNome">Bruna</p>
+      <button class="caixa surge" id="caixa" style="animation-delay:1.5s" aria-label="Abrir o porta-joias">
+        <span class="luz"></span>
+        <span class="tampa"><i></i></span>
+        <span class="corpo"><b class="fecho"></b></span>
+      </button>
+      <p class="ab-dica surge" style="animation-delay:2.1s">Toque no porta-joias</p>
+    </div>
+    <video class="cena-video" src="midia/coroa.mp4" muted playsinline preload="auto" aria-hidden="true"></video>
+    <div class="faixa-cine topo" aria-hidden="true"></div>
+    <div class="faixa-cine baixo" aria-hidden="true"></div>
+    <div class="flash" aria-hidden="true"></div>
+    <button class="pular" id="pular" hidden>Pular ›</button>
+  </div>
+
+  <main class="convite">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="cenario holofote" aria-hidden="true"></div>
+      <div class="hero-veu" aria-hidden="true"></div>
+      <div class="particulas" data-tipo="poeira" aria-hidden="true"></div>
+      <div class="hero-txt">
+        <svg class="hero-icone reveal"><use href="#icone"/></svg>
+        <p class="hero-pre reveal">Um tesouro de convite para o</p>
+        <p class="hero-baile reveal">Aniversário de</p>
+        <h1 class="hero-nome reveal" data-c="primeiroNome">Bruna</h1>
+        <div class="hero-idade reveal"><span class="linha"></span><b data-c="idade">23</b> anos<span class="linha"></span></div>
+        <div class="data-real reveal">
+          <span data-c="semana"></span>
+          <div><b data-c="dia"></b><small data-c="mes"></small></div>
+          <span data-c="hora"></span>
+        </div>
+      </div>
+      <a class="rolar" href="#mensagem" aria-label="Rolar para baixo">⌄</a>
+    </section>
+
+    <!-- MENSAGEM -->
+    <section class="bloco" id="mensagem">
+      <div class="pergaminho reveal">
+        <svg class="mini-icone"><use href="#icone"/></svg>
+        <p class="mensagem" data-c="mensagem"></p>
+        <p class="assinatura">com carinho, <span data-c="primeiroNome"></span></p>
+      </div>
+    </section>
+
+    <!-- FOTO -->
+    <section class="bloco centro">
+      <h2 class="titulo reveal">A joia da festa</h2>
+      <div class="moldura reveal">
+        <svg class="moldura-icone"><use href="#icone"/></svg>
+        <div class="arco">
+          <img id="fotoCapa" alt="" hidden>
+          <div class="arco-vazio"><span data-c="inicial">B</span><small>sua foto aqui</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTAGEM -->
+    <section class="bloco noite">
+      <h2 class="titulo claro reveal">Contagem para o grande dia</h2>
+      <div class="contagem reveal" data-cd-box>
+        <div><b data-cd="d">00</b><small>dias</small></div>
+        <div><b data-cd="h">00</b><small>horas</small></div>
+        <div><b data-cd="m">00</b><small>min</small></div>
+        <div><b data-cd="s">00</b><small>seg</small></div>
+      </div>
+      <p class="chegou-txt" data-cd-fim hidden>O grande dia chegou!</p>
+    </section>
+
+    <!-- DETALHES -->
+    <section class="bloco">
+      <h2 class="titulo reveal">Detalhes</h2>
+      <dl class="detalhes">
+        <div class="reveal"><dt>Data</dt><dd><span data-c="semana"></span>, <span data-c="dataCompleta"></span></dd></div>
+        <div class="reveal"><dt>Horário</dt><dd>a partir das <span data-c="hora"></span></dd></div>
+        <div class="reveal"><dt>Local</dt><dd><b data-c="localNome"></b><br><span data-c="localEndereco"></span></dd></div>
+        <div class="reveal" data-se="traje"><dt>Traje</dt><dd data-c="traje"></dd></div>
+      </dl>
+    </section>
+
+    <!-- MAPA -->
+    <section class="bloco">
+      <div class="mapa reveal" data-mapa></div>
+      <div class="botoes reveal">
+        <a class="btn" data-maps>Abrir no Maps</a>
+        <a class="btn" data-waze>Ir com Waze</a>
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section class="bloco" data-se="fotos">
+      <h2 class="titulo reveal">Momentos</h2>
+      <div class="galeria reveal" data-galeria></div>
+    </section>
+
+    <!-- PRESENTES -->
+    <section class="bloco" data-se="presentes">
+      <div class="pergaminho reveal">
+        <h2 class="titulo pequeno">Presente</h2>
+        <p data-c="presentes"></p>
+        <div data-se="pix">
+          <code class="pix" data-c="pix"></code>
+          <button class="btn btn-cheio" data-copiar-pix>Copiar chave Pix</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="bloco noite" id="confirmar">
+      <h2 class="titulo claro reveal">Confirme sua presença</h2>
+      <form class="pergaminho form reveal" data-rsvp>
+        <label class="campo"><span>Seu nome</span><input name="nome" autocomplete="name" placeholder="Nome e sobrenome" required></label>
+        <div class="escolha">
+          <label><input type="radio" name="vai" value="sim" checked><span>Estarei lá 💎</span></label>
+          <label><input type="radio" name="vai" value="nao"><span>Não poderei ir</span></label>
+        </div>
+        <label class="campo" data-linha-acomp><span>Quantas pessoas</span><select name="acomp"></select></label>
+        <label class="campo"><span>Deixe um recado (opcional)</span><textarea name="recado" rows="2" placeholder="Uma mensagem carinhosa…"></textarea></label>
+        <button class="btn btn-cheio grande" type="submit">Enviar confirmação</button>
+      </form>
+    </section>
+
+    <!-- AGENDA -->
+    <section class="bloco">
+      <div class="botoes reveal">
+        <a class="btn" data-agenda="google">Salvar no Google Agenda</a>
+        <button class="btn" data-agenda="ics">Salvar na agenda do celular</button>
+        <button class="btn" data-share>Compartilhar</button>
+      </div>
+    </section>
+
+    <footer class="rodape">
+      <svg class="mini-icone"><use href="#icone"/></svg>
+      <p>Te espero lá!</p>
+      <small>Convite digital por <b>Sales Soluções</b> · @salaessol</small>
+    </footer>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+  <script>
+    (function () {
+      const C = window.CONVITE;
+      const $ = (s) => document.querySelector(s);
+      const $$ = (s) => [...document.querySelectorAll(s)];
+      const CORES = ["#d4a84f", "#f5dc98", "#f4c6d6", "#b0245f", "#ffffff"];
+      if (C.fotos && C.fotos[0]) {
+        const img = $('#fotoCapa');
+        img.src = C.fotos[0]; img.alt = C.nome; img.hidden = false;
+        $('.arco-vazio').remove();
+      }
+
+      /* partículas do topo */
+      const P = $('.particulas');
+      for (let i = 0; i < 28; i++) {
+        const s = document.createElement('i');
+        s.style.left = Math.random() * 100 + '%';
+        s.style.setProperty('--y', (Math.random() * 70) + '%');
+        s.style.setProperty('--t', (2 + Math.random() * 3).toFixed(1) + 'px');
+        s.style.animationDelay = (-Math.random() * 9).toFixed(2) + 's';
+        s.style.animationDuration = (3 + Math.random() * 7).toFixed(2) + 's';
+        P.appendChild(s);
+      }
+
+      /* ===== sequência de cinema: abertura → vídeos → convite ===== */
+      const ab = $('#abertura'), pular = $('#pular');
+      const vids = $$('.cena-video');
+      let seguiu = false, fim = false, trava;
+
+      function final() {
+        if (fim) return; fim = true;
+        clearTimeout(trava);
+        ab.classList.add('clarao');
+        setTimeout(() => {
+          vids.forEach((v) => v.pause());
+          abrirConvite();
+          const hv = $('.hero-video');
+          if (hv) { hv.preload = 'auto'; hv.play().catch(() => {}); }
+          festa.chuva({ duracao: 2600, densidade: 3, cores: CORES, formas: ['ret', 'circ'] }); festa.brilhos({ qtd: 50, cores: CORES });
+        }, 650);
+      }
+      function tocar(i) {
+        if (fim) return;
+        if (i >= vids.length) return final();
+        const v = vids[i];
+        clearTimeout(trava);
+        v.onended = () => tocar(i + 1);
+        v.currentTime = 0;
+        v.play().then(() => {
+          v.classList.add('on');
+          trava = setTimeout(() => tocar(i + 1), 10000);
+        }).catch(() => tocar(i + 1));
+      }
+      window.seguir = function () {
+        if (seguiu) return; seguiu = true;
+        ab.classList.add('cinema');
+        if (vids.length) pular.hidden = false;
+        setTimeout(() => tocar(0), vids.length ? 500 : 0);
+      };
+      pular.addEventListener('click', final);
+
+      /* ===== interação de abertura deste modelo ===== */
+      $('#caixa').addEventListener('click', function () {
+        if (this.classList.contains('aberta')) return;
+        this.classList.add('aberta');
+        const r = this.getBoundingClientRect();
+        setTimeout(() => festa.brilhos({ x: r.left + r.width / 2, y: r.top + 20, qtd: 45, cores: CORES }), 500);
+        setTimeout(seguir, 1700);
+      });
+    })();
+  </script>
+</body>
+</html>
