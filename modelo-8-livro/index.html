@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1f2a22">
+  <title>Bruna 23 anos | Você está convidado(a)!</title>
+  <meta name="description" content="Era uma vez… o aniversário de 23 anos da Bruna. Abra o livro.">
+  <!-- Prévia no WhatsApp: depois de subir, troque "capa.jpg" pelo link completo -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bruna 23 anos 📖 Era uma vez… um convite pra você">
+  <meta property="og:description" content="Abra o livro, folheie as páginas e confirme sua presença.">
+  <meta property="og:image" content="capa.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== ABERTURA: CAPA DO LIVRO ===== -->
+  <div id="abertura" class="abertura">
+    <div class="livro" id="livro" role="button" tabindex="0" aria-label="Abrir o livro">
+      <div class="miolo"><p>Era uma vez…</p></div>
+      <div class="capa">
+        <span class="verso" aria-hidden="true"></span>
+        <div class="capa-frente">
+          <span class="filete" aria-hidden="true"></span>
+          <small>Contos de</small>
+          <b data-c="primeiroNome">Bruna</b>
+          <i>edição de <span data-c="idade"></span> anos</i>
+        </div>
+      </div>
+    </div>
+    <p class="ab-dica">Toque no livro para abrir</p>
+  </div>
+
+  <!-- ===== O LIVRO ===== -->
+  <main class="convite">
+    <div class="paginas" id="paginas">
+
+      <!-- 1 -->
+      <section class="pagina">
+        <div class="folha frontispicio">
+          <div class="gravura arco">
+            <video id="vCastelo" src="midia/castelo.mp4" poster="midia/castelo.jpg" muted playsinline loop preload="none" aria-hidden="true"></video>
+          </div>
+          <p class="era">Era uma vez o aniversário de</p>
+          <h1 data-c="primeiroNome">Bruna</h1>
+          <p class="sub">que completava <span data-c="idade"></span> anos e queria você na história.</p>
+          <p class="passe">passe a página</p>
+        </div>
+      </section>
+
+      <!-- 2 -->
+      <section class="pagina">
+        <div class="folha">
+          <h2>Capítulo da princesa</h2>
+          <div class="gravura redonda">
+            <video id="vPrincesa" src="midia/princesa.mp4" poster="midia/princesa.jpg" muted playsinline loop preload="none" aria-hidden="true"></video>
+          </div>
+          <p class="texto capitular" data-c="mensagem"></p>
+          <p class="assina">— <span data-c="primeiroNome"></span></p>
+        </div>
+      </section>
+
+      <!-- 3 -->
+      <section class="pagina">
+        <div class="folha">
+          <h2>O grande dia</h2>
+          <p class="texto">Numa <span data-c="semana"></span>, <span data-c="dataCompleta"></span>, a partir das <span data-c="hora"></span>, as portas do salão se abrirão para a festa.</p>
+          <div class="calendario">
+            <span data-c="mes"></span>
+            <b data-c="dia"></b>
+            <span data-c="ano"></span>
+          </div>
+          <p class="faltam" data-cd-box>Faltam <b data-cd="d">00</b> dias, <b data-cd="h">00</b>h <b data-cd="m">00</b>min <b data-cd="s">00</b>s</p>
+          <p class="faltam" data-cd-fim hidden>O grande dia chegou!</p>
+          <p class="texto" data-se="traje">Para a ocasião, pede-se o traje <span data-c="traje"></span>.</p>
+        </div>
+      </section>
+
+      <!-- 4 -->
+      <section class="pagina">
+        <div class="folha">
+          <h2>O lugar</h2>
+          <p class="texto">A festa acontecerá em <strong data-c="localNome"></strong>, <span data-c="localEndereco"></span>.</p>
+          <div class="mapa" data-mapa></div>
+          <div class="botoes duas">
+            <a class="btn" data-maps>Abrir no Maps</a>
+            <a class="btn" data-waze>Ir com Waze</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5 -->
+      <section class="pagina" data-se="fotos">
+        <div class="folha">
+          <h2>Retratos</h2>
+          <div class="retratos" data-galeria></div>
+        </div>
+      </section>
+
+      <!-- 6 -->
+      <section class="pagina" data-se="presentes">
+        <div class="folha">
+          <h2>Um mimo</h2>
+          <p class="texto" data-c="presentes"></p>
+          <div data-se="pix">
+            <code class="pix" data-c="pix"></code>
+            <button class="btn btn-cheio" data-copiar-pix>Copiar chave Pix</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7 -->
+      <section class="pagina" id="confirmar">
+        <div class="folha">
+          <h2>Assine o livro de presença</h2>
+          <form class="form" data-rsvp>
+            <label class="campo"><span>Seu nome</span><input name="nome" autocomplete="name" placeholder="Nome e sobrenome" required></label>
+            <div class="escolha">
+              <label><input type="radio" name="vai" value="sim" checked><span>Estarei lá</span></label>
+              <label><input type="radio" name="vai" value="nao"><span>Não poderei ir</span></label>
+            </div>
+            <label class="campo" data-linha-acomp><span>Quantas pessoas</span><select name="acomp"></select></label>
+            <label class="campo"><span>Uma dedicatória (opcional)</span><textarea name="recado" rows="2" placeholder="Escreva aqui"></textarea></label>
+            <button class="btn btn-cheio grande" type="submit">Enviar confirmação</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- 8 -->
+      <section class="pagina">
+        <div class="folha fim">
+          <p class="e-viveram">…e todos celebraram felizes para sempre.</p>
+          <p class="ornamento" aria-hidden="true">❧</p>
+          <div class="botoes">
+            <a class="btn" data-agenda="google">Salvar no Google Agenda</a>
+            <button class="btn" data-agenda="ics" type="button">Salvar na agenda do celular</button>
+            <button class="btn" data-share type="button">Compartilhar</button>
+          </div>
+          <small class="credito">Convite digital por <b>Sales Soluções</b> · @salaessol</small>
+        </div>
+      </section>
+    </div>
+
+    <nav class="navegacao" aria-label="Páginas">
+      <button class="seta" id="ant" aria-label="Página anterior">‹</button>
+      <span class="num" id="num">página 1</span>
+      <button class="seta" id="prox" aria-label="Próxima página">›</button>
+    </nav>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+  <script>
+    (function () {
+      const $ = (s) => document.querySelector(s);
+      const ab = $('#abertura'), livro = $('#livro'), cont = $('#paginas');
+      const vC = $('#vCastelo'), vP = $('#vPrincesa');
+      const cores = ['#b8893b', '#9c2a2a', '#2f5d3a', '#f3e9d3'];
+
+      /* folhear */
+      const paginas = () => [...cont.querySelectorAll('.pagina')];
+      let atual = 0;
+      function vai(i) {
+        const ps = paginas();
+        i = Math.max(0, Math.min(ps.length - 1, i));
+        cont.scrollTo({ left: ps[i].offsetLeft, behavior: 'smooth' });
+      }
+      function marca() {
+        const ps = paginas();
+        atual = Math.round(cont.scrollLeft / cont.clientWidth);
+        $('#num').textContent = `página ${atual + 1} de ${ps.length}`;
+        $('#ant').disabled = atual === 0;
+        $('#prox').disabled = atual === ps.length - 1;
+        // vídeo da princesa só toca quando a página dela aparece
+        if (document.body.classList.contains('aberto')) {
+          const naPrincesa = ps[atual] && ps[atual].contains(vP);
+          if (naPrincesa) { vP.preload = 'auto'; vP.play().catch(() => {}); } else vP.pause();
+        }
+      }
+      let t;
+      cont.addEventListener('scroll', () => { clearTimeout(t); t = setTimeout(marca, 80); });
+      $('#ant').addEventListener('click', () => vai(atual - 1));
+      $('#prox').addEventListener('click', () => vai(atual + 1));
+      document.addEventListener('keydown', (e) => {
+        if (!document.body.classList.contains('aberto')) return;
+        if (e.key === 'ArrowRight') vai(atual + 1);
+        if (e.key === 'ArrowLeft') vai(atual - 1);
+      });
+      marca();
+
+      /* abrir o livro */
+      function abre() {
+        if (livro.classList.contains('aberto')) return;
+        livro.classList.add('aberto');
+        ab.classList.add('abrindo');
+        [vC, vP].forEach((v) => v.play().then(() => v.pause()).catch(() => {})); // libera os vídeos no toque
+        setTimeout(() => {
+          abrirConvite();
+          vC.preload = 'auto';
+          vC.play().catch(() => {});
+          festa.chuva({ duracao: 1800, densidade: 2, cores, formas: ['circ', 'ret'] });
+          marca();
+        }, 1900);
+      }
+      livro.addEventListener('click', abre);
+      livro.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abre(); } });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#f7eef0">
+  <title>Bruna 23 anos | Você está convidado(a)!</title>
+  <meta name="description" content="Uma joia de convite: aniversário de 23 anos da Bruna. Toque para abrir.">
+  <!-- Prévia no WhatsApp: depois de subir, troque "capa.jpg" pelo link completo -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bruna 23 anos 💎 Uma joia de convite pra você">
+  <meta property="og:description" content="Abra o porta-joias e confirme sua presença.">
+  <meta property="og:image" content="capa.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== ABERTURA: PORTA-JOIAS ===== -->
+  <div id="abertura" class="abertura">
+    <div class="ab-conteudo">
+      <p class="ab-pre">Guardei algo precioso para você</p>
+      <button class="caixa" id="caixa" aria-label="Abrir o porta-joias">
+        <span class="luz"></span>
+        <span class="tampa"></span>
+        <span class="corpo"><b class="fecho"></b></span>
+      </button>
+      <p class="ab-dica">Toque para abrir</p>
+    </div>
+    <div class="flash" aria-hidden="true"></div>
+  </div>
+
+  <main class="convite">
+
+    <!-- HERO: VITRINE -->
+    <section class="vitrine">
+      <div class="oval">
+        <video id="joia" src="midia/coroa.mp4" poster="midia/coroa.jpg" muted playsinline preload="auto" aria-hidden="true"></video>
+      </div>
+      <h1 class="nome" data-c="primeiroNome">Bruna</h1>
+      <p class="anos">vinte e três anos</p>
+      <p class="quando"><span data-c="semana"></span>, <span data-c="dataCompleta"></span>, às <span data-c="hora"></span></p>
+    </section>
+
+    <!-- MENSAGEM -->
+    <section class="carta">
+      <p class="mensagem" data-c="mensagem"></p>
+      <p class="assina"><span data-c="primeiroNome"></span></p>
+    </section>
+
+    <!-- CONTAGEM EM FRASE -->
+    <section class="faltam" data-cd-box>
+      <p>Faltam <b data-cd="d">00</b> dias, <b data-cd="h">00</b> horas, <b data-cd="m">00</b> minutos e <b data-cd="s">00</b> segundos.</p>
+      <p class="chegou-txt" data-cd-fim hidden>É hoje.</p>
+    </section>
+
+    <!-- CERTIFICADO -->
+    <section class="cert-sec">
+      <div class="certificado">
+        <h2>Certificado de convite</h2>
+        <dl>
+          <div><dt>Ocasião</dt><dd>Aniversário de <span data-c="idade"></span> anos</dd></div>
+          <div><dt>Data</dt><dd><span data-c="semana"></span>, <span data-c="dataCompleta"></span></dd></div>
+          <div><dt>Horário</dt><dd>a partir das <span data-c="hora"></span></dd></div>
+          <div><dt>Local</dt><dd><span data-c="localNome"></span><br><small data-c="localEndereco"></small></dd></div>
+          <div data-se="traje"><dt>Traje</dt><dd data-c="traje"></dd></div>
+        </dl>
+        <p class="assinatura"><span data-c="nome"></span></p>
+      </div>
+      <div class="mapa" data-mapa></div>
+      <div class="botoes">
+        <a class="btn" data-maps>Abrir no Maps</a>
+        <a class="btn" data-waze>Ir com Waze</a>
+      </div>
+    </section>
+
+    <!-- GALERIA: ESTOJO -->
+    <section class="estojo-sec" data-se="fotos">
+      <h2>Momentos que brilham</h2>
+      <div class="estojo" data-galeria></div>
+    </section>
+
+    <!-- PRESENTE -->
+    <section class="presente" data-se="presentes">
+      <h2>Presente</h2>
+      <p data-c="presentes"></p>
+      <div data-se="pix">
+        <code class="pix" data-c="pix"></code>
+        <button class="btn btn-cheio" data-copiar-pix>Copiar chave Pix</button>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="rsvp" id="confirmar">
+      <h2>Confirme sua presença</h2>
+      <form class="form" data-rsvp>
+        <label class="campo"><span>Seu nome</span><input name="nome" autocomplete="name" placeholder="Nome e sobrenome" required></label>
+        <div class="escolha">
+          <label><input type="radio" name="vai" value="sim" checked><span>Estarei lá</span></label>
+          <label><input type="radio" name="vai" value="nao"><span>Não poderei ir</span></label>
+        </div>
+        <label class="campo" data-linha-acomp><span>Quantas pessoas</span><select name="acomp"></select></label>
+        <label class="campo"><span>Um recado para ela (opcional)</span><textarea name="recado" rows="2" placeholder="Escreva aqui"></textarea></label>
+        <button class="btn btn-claro grande" type="submit">Enviar confirmação</button>
+      </form>
+      <div class="botoes">
+        <a class="btn btn-linha-clara" data-agenda="google">Salvar no Google Agenda</a>
+        <button class="btn btn-linha-clara" data-agenda="ics" type="button">Salvar na agenda do celular</button>
+        <button class="btn btn-linha-clara" data-share type="button">Compartilhar</button>
+      </div>
+    </section>
+
+    <footer class="rodape">
+      <p class="mono" data-c="inicial">B</p>
+      <small>Convite digital por <b>Sales Soluções</b> · @salaessol</small>
+    </footer>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+  <script>
+    (function () {
+      const $ = (s) => document.querySelector(s);
+      const ab = $('#abertura'), caixa = $('#caixa'), joia = $('#joia');
+      const cores = ['#b8925a', '#e6cfa4', '#7d1a42', '#ffffff'];
+      caixa.addEventListener('click', () => {
+        if (caixa.classList.contains('aberta')) return;
+        caixa.classList.add('aberta');
+        joia.play().then(() => joia.pause()).catch(() => {}); // libera o vídeo no toque (iPhone)
+        const r = caixa.getBoundingClientRect();
+        setTimeout(() => festa.brilhos({ x: r.left + r.width / 2, y: r.top + 30, qtd: 40, cores }), 500);
+        setTimeout(() => ab.classList.add('clarao'), 1500);
+        setTimeout(() => {
+          abrirConvite();
+          joia.currentTime = 0;
+          joia.play().catch(() => {});
+          festa.brilhos({ qtd: 40, cores });
+        }, 2000);
+      });
+      // a coroa termina parada no nome
+      joia.addEventListener('ended', () => joia.classList.add('parada'));
+    })();
+  </script>
+</body>
+</html>

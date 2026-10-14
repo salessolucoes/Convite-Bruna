@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0d0508">
+  <title>Bruna 23 anos | Você está convidado(a)!</title>
+  <meta name="description" content="A estreia do ano: o aniversário de 23 anos da Bruna. Toque para assistir.">
+  <!-- Prévia no WhatsApp: depois de subir, troque "capa.jpg" pelo link completo -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bruna 23 anos 🎬 A estreia do ano!">
+  <meta property="og:description" content="Toque para assistir ao trailer e garantir seu ingresso.">
+  <meta property="og:image" content="capa.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Antonio:wght@200;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== ABERTURA: TRAILER ===== -->
+  <div id="abertura" class="abertura">
+    <div class="sala">
+      <p class="sala-txt">Sessão especial</p>
+      <button class="play" id="play" aria-label="Assistir ao trailer"><span></span></button>
+      <p class="sala-dica">Toque para assistir</p>
+    </div>
+
+    <div class="leader" aria-hidden="true">
+      <div class="leader-varre"></div>
+      <div class="leader-cruz"></div>
+      <b id="leaderNum">3</b>
+    </div>
+
+    <video class="cena" src="midia/castelo.mp4" muted playsinline preload="auto" data-legenda="Num reino não tão distante…"></video>
+    <video class="cena" src="midia/princesa.mp4" muted playsinline preload="auto" data-legenda="uma princesa vai completar 23 anos."></video>
+    <video class="cena" src="midia/coroa.mp4" muted playsinline preload="auto" data-legenda="E você está convidado(a) para a estreia."></video>
+
+    <p class="legenda" id="legenda" aria-live="polite"></p>
+    <div class="tarja topo" aria-hidden="true"></div>
+    <div class="tarja baixo" aria-hidden="true"></div>
+    <div class="flash" aria-hidden="true"></div>
+    <button class="pular" id="pular" hidden>Pular trailer</button>
+  </div>
+
+  <main class="convite">
+
+    <!-- PÔSTER -->
+    <section class="poster">
+      <div class="poster-img" aria-hidden="true"></div>
+      <p class="tagline">Uma noite para entrar na história</p>
+      <div class="titulo-filme">
+        <h1 data-c="primeiroNome">Bruna</h1>
+        <p class="vinte">23</p>
+      </div>
+      <p class="estreia">Estreia <span data-c="dataCurta"></span> · <span data-c="hora"></span></p>
+      <p class="billing">
+        Sales Soluções apresenta uma festa de <b data-c="nome">Bruna Herrera</b> com a participação especial de quem ela mais ama.
+        Trilha sonora: risadas até tarde. <span data-se="traje">Figurino: <span data-c="traje"></span>.</span> Locação: <span data-c="localNome"></span>.
+        Uma produção para guardar na memória.
+      </p>
+    </section>
+
+    <!-- SINOPSE -->
+    <section class="sinopse">
+      <h2>Sinopse</h2>
+      <p data-c="mensagem"></p>
+      <p class="assina">— <span data-c="primeiroNome"></span></p>
+    </section>
+
+    <!-- CONTAGEM -->
+    <section class="contagem-sec">
+      <h2>Em cartaz em</h2>
+      <div class="contagem" data-cd-box>
+        <div><b data-cd="d">00</b><small>dias</small></div>
+        <i>:</i>
+        <div><b data-cd="h">00</b><small>horas</small></div>
+        <i>:</i>
+        <div><b data-cd="m">00</b><small>min</small></div>
+        <i>:</i>
+        <div><b data-cd="s">00</b><small>seg</small></div>
+      </div>
+      <p class="chegou-txt" data-cd-fim hidden>Hoje é a estreia!</p>
+    </section>
+
+    <!-- CRÉDITOS / DETALHES -->
+    <section class="creditos">
+      <h2>Ficha técnica</h2>
+      <dl>
+        <div><dt>Estreia</dt><dd><span data-c="semana"></span>, <span data-c="dataCompleta"></span></dd></div>
+        <div><dt>Sessão</dt><dd>a partir das <span data-c="hora"></span></dd></div>
+        <div><dt>Sala</dt><dd><span data-c="localNome"></span><small data-c="localEndereco"></small></dd></div>
+        <div data-se="traje"><dt>Figurino</dt><dd data-c="traje"></dd></div>
+        <div><dt>Estrela</dt><dd data-c="nome"></dd></div>
+      </dl>
+      <div class="mapa" data-mapa></div>
+      <div class="botoes">
+        <a class="btn" data-maps>Abrir no Maps</a>
+        <a class="btn" data-waze>Ir com Waze</a>
+      </div>
+    </section>
+
+    <!-- ROLO DE FILME -->
+    <section class="rolo-sec" data-se="fotos">
+      <h2>Cenas favoritas</h2>
+      <div class="rolo" data-galeria></div>
+      <p class="rolo-dica">arraste para o lado</p>
+    </section>
+
+    <!-- PRESENTE -->
+    <section class="presente" data-se="presentes">
+      <h2>Bilheteria</h2>
+      <p data-c="presentes"></p>
+      <div data-se="pix">
+        <code class="pix" data-c="pix"></code>
+        <button class="btn btn-ouro" data-copiar-pix>Copiar chave Pix</button>
+      </div>
+    </section>
+
+    <!-- INGRESSO / RSVP -->
+    <section class="ingresso-sec" id="confirmar">
+      <h2>Garanta seu ingresso</h2>
+      <form class="ingresso" data-rsvp>
+        <div class="ing-corpo">
+          <p class="ing-topo"><span data-c="primeiroNome"></span> · <span data-c="idade"></span> anos</p>
+          <label class="campo"><span>Nome no ingresso</span><input name="nome" autocomplete="name" placeholder="Nome e sobrenome" required></label>
+          <div class="escolha">
+            <label><input type="radio" name="vai" value="sim" checked><span>Vou à estreia</span></label>
+            <label><input type="radio" name="vai" value="nao"><span>Não poderei ir</span></label>
+          </div>
+          <label class="campo" data-linha-acomp><span>Quantas pessoas</span><select name="acomp"></select></label>
+          <label class="campo"><span>Recado para a estrela (opcional)</span><textarea name="recado" rows="2" placeholder="Escreva aqui"></textarea></label>
+          <button class="btn btn-ouro grande" type="submit">Confirmar presença</button>
+        </div>
+        <div class="ing-canhoto" aria-hidden="true">
+          <span>Admite</span><b>1</b><span data-c="dataCurta"></span>
+        </div>
+      </form>
+      <div class="botoes">
+        <a class="btn" data-agenda="google">Salvar no Google Agenda</a>
+        <button class="btn" data-agenda="ics" type="button">Salvar na agenda do celular</button>
+        <button class="btn" data-share type="button">Compartilhar</button>
+      </div>
+    </section>
+
+    <footer class="fim">
+      <p class="fim-txt">Fim</p>
+      <p>…ou melhor, só o começo.</p>
+      <small>Convite digital por <b>Sales Soluções</b> · @salaessol</small>
+    </footer>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+  <script>
+    (function () {
+      const $ = (s) => document.querySelector(s);
+      const ab = $('#abertura'), leg = $('#legenda'), pular = $('#pular');
+      const cenas = [...document.querySelectorAll('.cena')];
+      const dourado = ['#c9a24a', '#ecd28f', '#e8b7c3', '#ffffff'];
+      let fim = false, trava;
+
+      function final() {
+        if (fim) return; fim = true;
+        clearTimeout(trava);
+        leg.classList.remove('on');
+        ab.classList.add('clarao');
+        setTimeout(() => {
+          cenas.forEach((v) => v.pause());
+          abrirConvite();
+          festa.chuva({ duracao: 2400, densidade: 3, cores: dourado, formas: ['ret', 'circ'] });
+        }, 650);
+      }
+      function cena(i) {
+        if (fim) return;
+        if (i >= cenas.length) return final();
+        const v = cenas[i];
+        clearTimeout(trava);
+        v.onended = () => cena(i + 1);
+        v.currentTime = 0;
+        v.play().then(() => {
+          cenas.forEach((c) => c.classList.toggle('on', c === v));
+          leg.classList.remove('on');
+          setTimeout(() => { leg.textContent = v.dataset.legenda; leg.classList.add('on'); }, 900);
+          setTimeout(() => leg.classList.remove('on'), 6200);
+          trava = setTimeout(() => cena(i + 1), 10000);
+        }).catch(() => cena(i + 1));
+      }
+      $('#play').addEventListener('click', () => {
+        if (ab.classList.contains('rodando')) return;
+        ab.classList.add('rodando');
+        pular.hidden = false;
+        // desbloqueia os vídeos no toque (iPhone)
+        cenas.forEach((v) => { v.play().then(() => v.pause()).catch(() => {}); });
+        const n = $('#leaderNum');
+        [3, 2, 1].forEach((k, i) => setTimeout(() => { n.textContent = k; ab.style.setProperty('--volta', i); n.classList.remove('bate'); void n.offsetWidth; n.classList.add('bate'); }, i * 800));
+        setTimeout(() => { ab.classList.add('filme'); cena(0); }, 2400);
+      });
+      pular.addEventListener('click', final);
+    })();
+  </script>
+</body>
+</html>

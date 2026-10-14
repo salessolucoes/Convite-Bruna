@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1d1440">
+  <title>Bruna 23 anos | Você está convidado(a)!</title>
+  <meta name="description" content="Uma noite no castelo: aniversário de 23 anos da Bruna. Toque para abrir os portões.">
+  <!-- Prévia no WhatsApp: depois de subir, troque "capa.jpg" pelo link completo -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bruna 23 anos 🏰 Os portões do castelo vão se abrir!">
+  <meta property="og:description" content="Toque para entrar no castelo e confirmar sua presença.">
+  <meta property="og:image" content="capa.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Parisienne&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== ABERTURA: PORTÕES ===== -->
+  <div id="abertura" class="abertura">
+    <div class="alem" aria-hidden="true"></div>
+    <div class="portoes" id="portoes" role="button" tabindex="0" aria-label="Abrir os portões do castelo">
+      <div class="porta esq"><span class="argola"></span></div>
+      <div class="porta dir"><span class="argola"></span></div>
+    </div>
+    <div class="ab-texto">
+      <p>Os portões do castelo vão se abrir para</p>
+      <b data-c="primeiroNome">Bruna</b>
+    </div>
+    <p class="ab-dica">Toque nos portões</p>
+    <video class="cena" id="cena" src="midia/princesa.mp4" muted playsinline preload="auto"></video>
+    <div class="flash" aria-hidden="true"></div>
+    <button class="pular" id="pular" hidden>Pular</button>
+  </div>
+
+  <!-- castelo com fogos ao fundo do convite inteiro -->
+  <video class="fundo" id="fundo" src="midia/castelo.mp4" poster="midia/castelo.jpg" muted playsinline loop preload="none" aria-hidden="true"></video>
+  <div class="fundo-veu" aria-hidden="true"></div>
+
+  <main class="convite">
+
+    <section class="abre">
+      <p class="abre-pre">Você é convidado(a) de honra da</p>
+      <h1><span>Noite no Castelo</span><b data-c="primeiroNome">Bruna</b></h1>
+      <p class="abre-idade"><span data-c="idade"></span> anos</p>
+      <a class="desce" href="#convite" aria-label="Ver o convite">⌄</a>
+    </section>
+
+    <section class="janela" id="convite">
+      <p class="mensagem" data-c="mensagem"></p>
+      <p class="assina">com carinho, <span data-c="primeiroNome"></span></p>
+    </section>
+
+    <section class="janela larga">
+      <h2>O baile começa em</h2>
+      <div class="contagem" data-cd-box>
+        <div><b data-cd="d">00</b><small>dias</small></div>
+        <div><b data-cd="h">00</b><small>horas</small></div>
+        <div><b data-cd="m">00</b><small>min</small></div>
+        <div><b data-cd="s">00</b><small>seg</small></div>
+      </div>
+      <p class="chegou-txt" data-cd-fim hidden>Os portões já estão abertos!</p>
+    </section>
+
+    <section class="janela">
+      <h2>Quando e onde</h2>
+      <div class="data-grande">
+        <b data-c="dia"></b>
+        <div><span data-c="mes"></span><span data-c="ano"></span></div>
+      </div>
+      <p class="linha-info"><span data-c="semana"></span>, a partir das <span data-c="hora"></span></p>
+      <p class="linha-info"><strong data-c="localNome"></strong><br><span data-c="localEndereco"></span></p>
+      <p class="linha-info" data-se="traje">Traje: <span data-c="traje"></span></p>
+      <div class="mapa" data-mapa></div>
+      <div class="botoes duas">
+        <a class="btn" data-maps>Abrir no Maps</a>
+        <a class="btn" data-waze>Ir com Waze</a>
+      </div>
+    </section>
+
+    <section class="janela" data-se="fotos">
+      <h2>Momentos</h2>
+      <div class="galeria" data-galeria></div>
+    </section>
+
+    <section class="janela" data-se="presentes">
+      <h2>Presente</h2>
+      <p data-c="presentes"></p>
+      <div data-se="pix">
+        <code class="pix" data-c="pix"></code>
+        <button class="btn btn-ouro" data-copiar-pix>Copiar chave Pix</button>
+      </div>
+    </section>
+
+    <section class="janela" id="confirmar">
+      <h2>Confirme sua presença</h2>
+      <form class="form" data-rsvp>
+        <label class="campo"><span>Seu nome</span><input name="nome" autocomplete="name" placeholder="Nome e sobrenome" required></label>
+        <div class="escolha">
+          <label><input type="radio" name="vai" value="sim" checked><span>Estarei lá</span></label>
+          <label><input type="radio" name="vai" value="nao"><span>Não poderei ir</span></label>
+        </div>
+        <label class="campo" data-linha-acomp><span>Quantas pessoas</span><select name="acomp"></select></label>
+        <label class="campo"><span>Recado (opcional)</span><textarea name="recado" rows="2" placeholder="Escreva aqui"></textarea></label>
+        <button class="btn btn-ouro grande" type="submit">Enviar confirmação</button>
+      </form>
+    </section>
+
+    <section class="acoes">
+      <a class="btn" data-agenda="google">Salvar no Google Agenda</a>
+      <button class="btn" data-agenda="ics" type="button">Salvar na agenda do celular</button>
+      <button class="btn" data-share type="button">Compartilhar</button>
+    </section>
+
+    <footer class="rodape">
+      <p>Te espero no castelo!</p>
+      <small>Convite digital por <b>Sales Soluções</b> · @salaessol</small>
+    </footer>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+  <script>
+    (function () {
+      const $ = (s) => document.querySelector(s);
+      const ab = $('#abertura'), portoes = $('#portoes'), cena = $('#cena'), fundo = $('#fundo'), pular = $('#pular');
+      const cores = ['#e9c46a', '#f7e3a1', '#f3a6b8', '#b9a6ff', '#ffffff'];
+      let fim = false, trava;
+      function final() {
+        if (fim) return; fim = true;
+        clearTimeout(trava);
+        ab.classList.add('clarao');
+        setTimeout(() => {
+          cena.pause();
+          abrirConvite();
+          fundo.preload = 'auto';
+          fundo.play().catch(() => {});
+          festa.canhoes({ cores });
+          setTimeout(() => festa.brilhos({ qtd: 60, cores }), 600);
+        }, 600);
+      }
+      function abre() {
+        if (portoes.classList.contains('abertos')) return;
+        portoes.classList.add('abertos');
+        ab.classList.add('abrindo');
+        pular.hidden = false;
+        cena.play().then(() => cena.pause()).catch(() => {}); // libera o vídeo no toque
+        fundo.play().then(() => fundo.pause()).catch(() => {});
+        setTimeout(() => {
+          cena.currentTime = 0;
+          cena.play().then(() => {
+            ab.classList.add('filme');
+            trava = setTimeout(final, 9500);
+          }).catch(final);
+        }, 1500);
+      }
+      cena.addEventListener('ended', final);
+      portoes.addEventListener('click', abre);
+      portoes.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abre(); } });
+      pular.addEventListener('click', final);
+    })();
+  </script>
+</body>
+</html>
